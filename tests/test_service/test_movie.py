@@ -51,8 +51,8 @@ class TestMovieService:
         assert movie.id is not None
 
     def test_get_all(self):
-        movies = self.movie_service.get_all()
-        assert len(movies) > 0
+        movies = self.movie_service.get_all({"director_id": 1})
+        assert movies is not None
 
     def test_create(self):
         movie_d = {"title": "Joker",
